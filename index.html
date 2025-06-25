@@ -1,52 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sampath Reddy - Professional Profile</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title> Sampath Reddy - Professional Profile</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0; background: #f5f7fa; color: #333;
+  }
+  header {
+    background: #004080;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    background: #0073e6;
+  }
+  nav button {
+    background: none;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  nav button:hover, nav button.active {
+    background: #005bb5;
+  }
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+    display: none;
+  }
+  section.active {
+    display: block;
+  }
+  h2 {
+    border-bottom: 2px solid #0073e6;
+    padding-bottom: 10px;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul li {
+    margin-bottom: 12px;
+  }
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="profile-header">
-      <img id="profile-photo" alt="Sampath Reddy Photo">
-      <div>
-        <h1 id="name"></h1>
-        <h2 id="title"></h2>
-        <p id="summary"></p>
-      </div>
-    </div>
+<header>
+  <h1>Sampath Reddy</h1>
+  <p>Senior AR Process / Area of Expertise</p>
+</header>
 
-    <section>
-      <h3>Skills</h3>
-      <ul id="skills-list"></ul>
-    </section>
+<nav>
+  <button class="tab-button active" data-tab="experience">Experience</button>
+  <button class="tab-button" data-tab="skills">Skills</button>
+  <button class="tab-button" data-tab="education">Education</button>
+  <button class="tab-button" data-tab="projects">Projects</button>
+  <button class="tab-button" data-tab="contact">Contact</button>
+</nav>
 
-    <section>
-      <h3>Work Experience</h3>
-      <ul id="experience-list"></ul>
-    </section>
+<section id="experience" class="tab-content active">
+  <h2>Work Experience</h2>
+  <ul>
+    <li>
+      <strong>Senior AR Analyst</strong> at Aloha Technology Private Limited  (2025 - Present)<br/>
+      - Managed Aprior Authorization project for Dermotology speciality.<br/>
+      - Led a team of analysts to Manage and Timely process efficiency of Authorizations.<br/>
+      - Managing Day to day Scheduled Appointmetns and Submitting Same day Authorization .<br/>
+    </li>
+    <li>
+      <strong>Senior Service Co-Ordinator </strong> Aeries Technologies (2022 - 20124)<br/>
+      - Handled AR denials and prior authorization processes.<br/>
+      - Collaborated with payers to ensure timely claim resolution.<br/>
+      - Handle a team of 8 memebers for Both prior Authorization and Schedule on boarding.<br/>
+      - Analyzing the Trends of Denials and Make a dashboards for easy reference and fast solutions.<br/>
+      <li>
+        <strong>Senior Claims Associate</strong> Optum Technologies (2015 - 20122)<br/>
+        - Handled Claims Adjudication for Both Physician and Hospital claims .<br/>
+        - handle a 20 members team and act a Subject mater excpet for Claims quiries <br/>
+        - Auditing and Making a Quality report , Taking one on one session for Error discusioions <br/>
+        - Taking Weekly session for New Topics and updates on Claims adjudication <br/>
+      
+    </li>
+  </ul>
+</section>
 
-    <section>
-      <h3>Education</h3>
-      <ul id="education-list"></ul>
-    </section>
+<section id="skills" class="tab-content">
+  <h2>Skills</h2>
+  <ul>
+    <li>Claims Adjudication & RCM Process</li>
+    <li>Prior Authorization Management</li>
+    <li>Healthcare AR Denials Analysis</li>
+    <li>Data Analysis & Reporting</li>
+    <li>Customer Service & Communication</li>
+  </ul>
+</section>
 
-    <section>
-      <h3>Projects</h3>
-      <ul id="projects-list"></ul>
-    </section>
+<section id="education" class="tab-content">
+  <h2>Education</h2>
+  <ul>
+    <li>Master of Business Administation - JNTUH University (2010 - 2013)</li>
+    <li>Bachelor Of Sceince in Bio Technology - kakatiya University (2005 - 2009)</li>
+  </ul>
+</section>
 
-    <section>
-      <h3>Contact</h3>
-      <p id="email"></p>
-      <p id="phone"></p>
-      <p id="linkedin"></p>
-    </section>
-  </div>
+<section id="projects" class="tab-content">
+  <h2>Projects</h2>
+  <ul>
+    <li><strong>RCM Process Automation</strong>: Implemented automation tools to reduce manual claims follow-up by 40%.</li>
+    <li><strong>AR Denial Tracking Dashboard</strong>: Developed reporting dashboards for improved denial management.</li>
+  </ul>
+</section>
 
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+<section id="contact" class="tab-content">
+  <h2>Contact</h2>
+  <p>Email: mydubkr@gmail.com</p>
+   <p>Phone: 9848496591</p>
+<p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/sampath-reddy</a></p>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll('.tab-button');
+  const sections = document.querySelectorAll('.tab-content');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons and sections
+      buttons.forEach(b => b.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+
+      // Add active class to clicked button and corresponding section
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
 </body>
 </html>
